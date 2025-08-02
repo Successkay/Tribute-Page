@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tribute to Nelson Mandela</title>
+
+  <!-- AOS Animation Library -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #222;
+      --accent: #00c9a7;
+      --light: #f4f4f4;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--light);
+      margin: 0;
+      padding: 0;
+      color: var(--primary);
+    }
+
+    header {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-img {
+      width: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-top: 1rem;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #333;
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s;
+    }
+
+    nav button.active,
+    nav button:hover {
+      border-bottom: 2px solid var(--accent);
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    figure {
+      margin: 0;
+      text-align: center;
+    }
+
+    figcaption {
+      font-style: italic;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      color: #666;
+    }
+
+    blockquote {
+      border-left: 4px solid #ccc;
+      padding-left: 1rem;
+      color: #555;
+      font-style: italic;
+      margin: 1rem 0;
+    }
+
+    .video {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+    }
+
+    .video iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .photo-grid {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .photo-grid figure img {
+      width: 100%;
+      border-radius: 12px;
+      height: auto;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .photo-grid figure img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      background: var(--primary);
+      color: white;
+      padding: 1rem;
+      margin-top: 3rem;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 700px) {
+      main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        grid-column: span 2;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Nelson Mandela</h1>
+    <p>1918 – 2013</p>
+    <img src="https://images.unsplash.com/photo-1699119060375-9de92d173ac7?q=80&w=651&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nelson Mandela" class="hero-img" />
+  </header>
+
+  <nav>
+    <button class="tab-btn active" data-target="bio">Biography</button>
+    <button class="tab-btn" data-target="photos">Photos</button>
+    <button class="tab-btn" data-target="quotes">Quotes</button>
+  </nav>
+
+  <main>
+    <!-- Biography Tab -->
+    <section id="bio" class="active" data-aos="fade-up">
+      <h2>Biography</h2>
+      <p>
+        Nelson Mandela was a South African anti-apartheid activist, lawyer, and politician who served as President of South Africa from 1994 to 1999. He was the country’s first Black head of state and the first elected in a fully representative democratic election.
+      </p>
+      <ul>
+        <li><strong>1918:</strong> Born in Mvezo, South Africa</li>
+        <li><strong>1962:</strong> Imprisoned for 27 years</li>
+        <li><strong>1990:</strong> Released from prison</li>
+        <li><strong>1994:</strong> Became President</li>
+      </ul>
+      <div class="video" data-aos="zoom-in">
+        <iframe src="https://www.youtube.com/embed/UkjWvYC1jAw?si=zG2VPsftNWK1Rx-A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <!-- Photos Tab -->
+    <section id="photos" data-aos="fade-up">
+      <h2>Photos</h2>
+      <div class="photo-grid">
+        <figure>
+          <img src="https://cdn.pixabay.com/photo/2014/11/20/20/40/nelson-mandela-539834_1280.jpg" alt="Nelson Mandela mural" />
+          <figcaption>Mural of Nelson Mandela</figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://cdn.thecollector.com/wp-content/uploads/2022/09/photo-life-of-nelson-mandela-south-africa-flag.jpg?width=1400&quality=70" alt="South African flag waving" />
+          <figcaption>South African flag — symbol of Mandela's legacy</figcaption>
+        </figure>
+
+        <figure>
+          <img src="https://cdn.thecollector.com/wp-content/uploads/2022/09/nelson-mandela-release.jpg?width=1062&quality=55" alt="People uniting in peace" />
+          <figcaption>Mandela's vision: Unity & Reconciliation</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Quotes Tab -->
+    <section id="quotes" data-aos="fade-up">
+      <h2>Quotes</h2>
+      <blockquote>
+        “Education is the most powerful weapon which you can use to change the world.”
+      </blockquote>
+      <blockquote>
+        “It always seems impossible until it’s done.”
+      </blockquote>
+      <blockquote>
+        “I am not a saint, unless you think of a saint as a sinner who keeps on trying.”
+      </blockquote>
+    </section>
+  </main>
+
+  <footer>
+    Tribute Page | Made with ❤️ | © 2025
+  </footer>
+
+  <!-- AOS Scroll Animation -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    // Tab Switch Logic
+    const tabs = document.querySelectorAll('.tab-btn');
+    const sections = document.querySelectorAll('main section');
+
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+
+        sections.forEach(sec => {
+          sec.classList.remove('active');
+          if (sec.id === btn.dataset.target) {
+            sec.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>
